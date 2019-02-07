@@ -66,7 +66,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > jumbotrons.length) {slideIndex = 1} 
   jumbotrons[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 1500); // Change image every 2 seconds
+  setTimeout(showSlides, 1000); // Change image every 2 seconds
 }
 
 
