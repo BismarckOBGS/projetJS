@@ -27,23 +27,39 @@ oXhr.onload = function () {
 
      //Pour les details de la station
 
-    var initDispo =  staVel.available_bike_stands;
-    var dispo =  staVel.available_bikes;
-    var adresse = staVel.address;
+    
 
     // -------------------------------------------
 
-    var status = staVel.status;
+      initDispo =  staVel.available_bike_stands;
+      dispo =  staVel.available_bikes;
+      adresse = staVel.address;
 
-    var marker = L.marker([posX, posY]).addTo(map);
+      var status = staVel.status;
+
+      var marker = L.marker([posX, posY]).addTo(map);
+      
+      marker.bindPopup(staVel.status);
+      marker.on('mouseover', function(e){ marker.openPopup(); });
+      marker.on('mouseout', function(e){ marker.closePopup(); });
+
+    // Evènement (Click)
+
+     
     
-    marker.bindPopup(staVel.status);
-
-
-    marker.on('mouseover', function(e){ marker.openPopup(); });
-    marker.on('mouseout', function(e){ marker.closePopup(); });
-
   }
+  
+    function infoBike(data){
+
+        marker.addEventListener("click", function(){
+        console.log(staVel.available_bike_stands);
+        console.log(staVel.available_bikes);
+        console.log(staVel.address);
+      },false);
+    }
+  
+    
+  
 
 };
 
