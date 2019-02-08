@@ -26,7 +26,6 @@ oXhr.onload = function () {
 
      //Pour les details de la station
 
-<<<<<<< HEAD
     
 
     // -------------------------------------------
@@ -36,7 +35,6 @@ oXhr.onload = function () {
       adresse = staVel.address;
 
       var status = staVel.status;
-=======
     var initDispo =  element.available_bike_stands;
     var dispo =  element.available_bikes;
     var adresse = element.address;
@@ -53,7 +51,6 @@ oXhr.onload = function () {
       document.getElementById('adresseVelo').innerHTML = adresse;
       document.getElementById('nombreVelos').innerHTML = dispo;
     });
->>>>>>> d8bb32f721074e0f535005ffc8709046ffb1c308
 
       var marker = L.marker([posX, posY]).addTo(map);
       
@@ -63,7 +60,6 @@ oXhr.onload = function () {
 
     // Evènement (Click)
 
-<<<<<<< HEAD
      
     
   }
@@ -79,9 +75,7 @@ oXhr.onload = function () {
   
     
   
-=======
   });
->>>>>>> d8bb32f721074e0f535005ffc8709046ffb1c308
 
 };
 
