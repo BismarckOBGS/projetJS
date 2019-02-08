@@ -41,7 +41,7 @@ oXhr.onload = function () {
 
     // -------------------------------------------
 
-    var status = element.status;
+  
 
     var marker = L.marker([posX, posY]).addTo(map);
 
@@ -62,13 +62,8 @@ oXhr.onload = function () {
 
      
     
-  }
+  })
   
-
-  
-    
- 
-
 };
 
 oXhr.onerror = function (data) {
