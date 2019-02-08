@@ -8,7 +8,6 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
  
  .addTo(map);
 
- 
 
  // Chargement des données depui JCDecaux
 
@@ -19,7 +18,6 @@ var oXhr = new XMLHttpRequest();
 oXhr.onload = function () {
   var data = JSON.parse(this.responseText);
   // ici les données sont exploitables
-  var markers = new Array();
 
   for(var i=0;i<data.length;i++)
   {
@@ -27,8 +25,14 @@ oXhr.onload = function () {
     var posX = staVel.position.lat;
     var posY = staVel.position.lng
 
+     //Pour les details de la station
+
     var initDispo =  staVel.available_bike_stands;
     var dispo =  staVel.available_bikes;
+    var adresse = staVel.address;
+
+    // -------------------------------------------
+
     var status = staVel.status;
 
     var marker = L.marker([posX, posY]).addTo(map);
