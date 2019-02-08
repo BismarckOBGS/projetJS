@@ -30,11 +30,9 @@ oXhr.onload = function () {
 
     // -------------------------------------------
 
-      initDispo =  staVel.available_bike_stands;
-      dispo =  staVel.available_bikes;
-      adresse = staVel.address;
+      
 
-      var status = staVel.status;
+     
     var initDispo =  element.available_bike_stands;
     var dispo =  element.available_bikes;
     var adresse = element.address;
@@ -54,7 +52,7 @@ oXhr.onload = function () {
 
       var marker = L.marker([posX, posY]).addTo(map);
       
-      marker.bindPopup(staVel.status);
+      marker.bindPopup(element.status);
       marker.on('mouseover', function(e){ marker.openPopup(); });
       marker.on('mouseout', function(e){ marker.closePopup(); });
 
