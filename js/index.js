@@ -64,18 +64,10 @@ oXhr.onload = function () {
     
   }
   
-    function infoBike(data){
 
-        marker.addEventListener("click", function(){
-        console.log(staVel.available_bike_stands);
-        console.log(staVel.available_bikes);
-        console.log(staVel.address);
-      },false);
-    }
   
     
-  
-  });
+ 
 
 };
 
