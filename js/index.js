@@ -5,7 +5,7 @@
 var map = L.map('map').setView([45.743317, 4.815747], 13);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
  { attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>' })
- 
+
  .addTo(map);
 
 
@@ -19,31 +19,35 @@ oXhr.onload = function () {
   var data = JSON.parse(this.responseText);
   // ici les données sont exploitables
 
-  for(var i=0;i<data.length;i++)
-  {
-    var staVel = data[i];
-    var posX = staVel.position.lat;
-    var posY = staVel.position.lng
+  data.forEach(element => {
+
+    var posX = element.position.lat;
+    var posY = element.position.lng
 
      //Pour les details de la station
 
-    var initDispo =  staVel.available_bike_stands;
-    var dispo =  staVel.available_bikes;
-    var adresse = staVel.address;
+    var initDispo =  element.available_bike_stands;
+    var dispo =  element.available_bikes;
+    var adresse = element.address;
 
     // -------------------------------------------
 
-    var status = staVel.status;
+    var status = element.status;
 
     var marker = L.marker([posX, posY]).addTo(map);
-    
-    marker.bindPopup(staVel.status);
+
+    marker.bindPopup(element.status);
+
+    marker.addEventListener("click", function(){
+      document.getElementById('adresseVelo').innerHTML = adresse;
+      document.getElementById('nombreVelos').innerHTML = dispo;
+    });
 
 
     marker.on('mouseover', function(e){ marker.openPopup(); });
     marker.on('mouseout', function(e){ marker.closePopup(); });
 
-  }
+  });
 
 };
 
@@ -65,15 +69,10 @@ function showSlides() {
   var i;
   var jumbotrons = document.getElementsByClassName("jumbotron");
   for (i = 0; i < jumbotrons.length; i++) {
-    jumbotrons[i].style.display = "none"; 
+    jumbotrons[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > jumbotrons.length) {slideIndex = 1} 
-  jumbotrons[slideIndex-1].style.display = "block"; 
+  if (slideIndex > jumbotrons.length) {slideIndex = 1}
+  jumbotrons[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 1000); // Change image every 2 seconds
 }
-
-
-
-
-
