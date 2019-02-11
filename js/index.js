@@ -42,11 +42,14 @@ oXhr.onload = function () {
 
     marker.on('mouseover', function(e){ marker.openPopup(); });
     marker.on('mouseout', function(e){ marker.closePopup(); });
+    marker.on('click', function(e){
+      document.querySelector('#info_station').innerHTML = '<div> Adresse : ' + 
+      staVel.address + '</div>'
+    })
 
   }
 
 };
-
 oXhr.onerror = function (data) {
   console.log('Erreur ...');
 };
@@ -72,6 +75,8 @@ function showSlides() {
   jumbotrons[slideIndex-1].style.display = "block"; 
   setTimeout(showSlides, 1000); // Change image every 2 seconds
 }
+
+
 
 
 
