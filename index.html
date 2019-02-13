@@ -93,21 +93,27 @@
       <span> <strong>Adresse: </strong> </span> <p id="adresseVelo"></p><br>
       <span> <strong>Nombre de vélos: </strong> </span> <p id="nombreVelos"></p>
           <p id="info_station">bonjour les gars </p>
-          <form method="post" name="frminfo" action="">
-             <div class="form-group">
-               <label>Nom</label>
-               <input type="text" name="txtnom" id="Name">
-             </div>
-             <div class="form-group">
-             <label>Prenom</label>
-             <input type="text" name="txtpnom" id="Surname">
-             </div>
-             <div>
-               <a class="btn btn-primary" href="#confirm" id="Reserved">Reservez</a>
-             </div>
+          <form name="frminfo" method="POST" action="">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="Name"  name="txtnom" class="form-control inpunt-lg">
+            </div>
+            <div class="form-group has error">
+                  <label for="prenoms">prénoms</label>
+                  <input type="text" id="Surname"name="txtpnom" class="form-control inpunt-lg">
+              </div>
+                <a href="#confirm" class="btn btn-primary" id="Reserved">Reservez</a>
+  
           </form>
         
            
+
+  
+          <span> <strong>Adresse: </strong> </span> <p id="adresseVelo"></p><br>
+          <span> <strong>Nombre de vélos: </strong> </span> <p id="nombreVelos"></p>
+           
+
+
     </figure>
 
   </div>
