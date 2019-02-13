@@ -39,6 +39,10 @@ oXhr.onload = function () {
     marker.bindPopup(element.status);
     marker.on('mouseover', function(e){ marker.openPopup(); });
     marker.on('mouseout', function(e){ marker.closePopup(); });
+    marker.on('click', function(e){
+      document.querySelector('#info_station').innerHTML = '<div> Adresse : ' + 
+      staVel.address + '</div>'
+    })
 
     marker.addEventListener("click", function(){
       document.getElementById('adresseVelo').innerHTML = adresse;
@@ -53,7 +57,6 @@ oXhr.onload = function () {
 
 
 };
-
 oXhr.onerror = function (data) {
   console.log('Erreur ...');
 };
