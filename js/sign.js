@@ -1,3 +1,4 @@
+
 var signature = 0;
 var recup = function(element){
   return document.getElementById(element);
@@ -79,8 +80,8 @@ confirm.addEventListener('click', function(e){
   if(signature == 1){
     recup('legend').style.color = '#FFF';
     canvas.style.borderColor = '#333';
-    recup('timerContent').innerHTML = "Réservation de " + sessionStorage.getItem('name') + ' ' + 
-    sessionStorage.getItem('surname') + ' à la station ' + sessionStorage.getItem('adresse') + '<br>';
+    recup('timerContent').innerHTML = "Réservation de " + sessionStorage.getItem('surname') + " "+ sessionStorage.getItem('name')+ 
+     + ' à la station ' + sessionStorage.getItem('adresse') + '<br>';
     recup('timer').style.display = 'block';
     recup('sign').style.display = 'none';
     signature = 0;
@@ -91,13 +92,15 @@ confirm.addEventListener('click', function(e){
   }
 })
 Reserved.addEventListener('click', function(e){
-  if(Name.value ==="" || Surname.value ===""){
+  if(Name.value ==="" || Surname.value ==="" || document.getElementById('adresseVelo').innerHTML==="" || document.getElementById('nombreVelos').innerHTML ==0){
     e.preventDefault();
   }
   else{
     /* INSERTION DANS L'API SESSION STORAGE */
     sessionStorage.setItem('name', Name.value);
     sessionStorage.setItem('surname', Surname.value);
+    sessionStorage.setItem('adresse', document.getElementById('adresseVelo').innerHTML);
+    
     Name.setAttribute('onFocus', 'this.blur()')
     Surname.setAttribute('onFocus','this.blur()')
     Reserved.style.display = 'none';
