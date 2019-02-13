@@ -80,7 +80,7 @@ confirm.addEventListener('click', function(e){
   if(signature == 1){
     recup('legend').style.color = '#FFF';
     canvas.style.borderColor = '#333';
-    recup('timerContent').innerHTML = "Réservation de " + sessionStorage.getItem('surname') + " "+ sessionStorage.getItem('name')+ 
+    recup('timerContent').innerHTML = "Réservation de " + sessionStorage.getItem('surname') + ' ' + sessionStorage.getItem('name') + ' ' 
      + ' à la station ' + sessionStorage.getItem('adresse') + '<br>';
     recup('timer').style.display = 'block';
     recup('sign').style.display = 'none';
