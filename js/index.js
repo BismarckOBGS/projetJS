@@ -40,8 +40,7 @@ oXhr.onload = function () {
     marker.on('mouseover', function(e){ marker.openPopup(); });
     marker.on('mouseout', function(e){ marker.closePopup(); });
   
-
-    marker.addEventListener("click", function(){
+     marker.addEventListener("click", function(){
       document.getElementById('adresseVelo').innerHTML = adresse;
       document.getElementById('nombreVelos').innerHTML = dispo;
     });
