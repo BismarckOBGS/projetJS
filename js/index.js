@@ -37,6 +37,8 @@ oXhr.onload = function () {
     var marker = L.marker([posX, posY]).addTo(map);
 
     marker.bindPopup(element.status);
+    marker.on('mouseover', function(e){ marker.openPopup(); });
+    marker.on('mouseout', function(e){ marker.closePopup(); });
 
     marker.addEventListener("click", function(){
       document.getElementById('adresseVelo').innerHTML = adresse;
@@ -44,10 +46,11 @@ oXhr.onload = function () {
     });
 
 
-    marker.on('mouseover', function(e){ marker.openPopup(); });
-    marker.on('mouseout', function(e){ marker.closePopup(); });
+    
 
   });
+
+
 
 };
 
@@ -74,5 +77,5 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > jumbotrons.length) {slideIndex = 1}
   jumbotrons[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 1000); // Change image every 2 seconds
+  setTimeout(showSlides, 1000); // Change image every  second
 }
