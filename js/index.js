@@ -42,7 +42,14 @@ oXhr.onload = function () {
   
      marker.addEventListener("click", function(){
       document.getElementById('adresseVelo').innerHTML = adresse;
-      document.getElementById('nombreVelos').innerHTML = dispo;
+      document.getElementById('nombreVelos').innerHTML = initDispo;
+
+       Reserved.addEventListener("click", function(){
+        if(element.address == adresse){
+          initDispo= initDispo-1;
+          document.getElementById('nombreVelos').innerHTML = initDispo;
+        }
+      })
     });
 
 
